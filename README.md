@@ -21,11 +21,12 @@ The guide assumes that:
 
 Clone your application repository or copy the static website files into your VM.
 
-For example:
-
 ```bash
 git clone https://github.com/pravinmishraaws/Azure-Static-Website.git
 ```
+
+![codebase](Image/cloneapp.png)
+
 
 ### Step 2: Navigate to the Application Directory
 
@@ -35,7 +36,7 @@ Change into the directory containing your website files:
 cd Azure-Static-Website
 ```
 
-### Step 4: Create a Dockerfile
+### Step 3: Create a Dockerfile
 
 Create a file named `Dockerfile` in your application directory:
 
@@ -59,7 +60,7 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 ```
 
-### Step 5: Build the Docker Image
+### Step 4: Build the Docker Image
 
 Run the following command from the directory containing your Dockerfile:
 
@@ -69,7 +70,7 @@ docker build -t static-site:latest .
 
 This builds a Docker image named `static-site` with the `latest` tag.
 
-### Step 6: Verify the Docker Image
+### Step 5: Verify the Docker Image
 
 Confirm that the image was created successfully:
 
@@ -91,6 +92,7 @@ docker run -d \
   static-site:latest
 ```
 
+
 **Command breakdown:**
 
 - `-d`: Runs the container in detached mode (background).
@@ -109,6 +111,8 @@ docker ps
 
 You should see `static-site` in the list of running containers.
 
+![running containers](Image/docker%20ps.png)
+
 ### Step 9: Access the Website
 
 Open a browser and navigate to:
@@ -118,6 +122,7 @@ http://20.90.12.64:80
 ```
 
 If everything is configured correctly, your static website should load successfully.
+![website](Image/website80.png)
 
 **Important:** Ensure that inbound TCP port 80 and 22 is allowed in your Azure Network Security Group (NSG) and any applicable VM firewall rules.
 
