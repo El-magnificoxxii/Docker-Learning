@@ -25,7 +25,7 @@ docker ps
    
 ![](Image/alpineimage.png)
 
-4. The container should be accessible via the VM public ip address/port
+4. The container should be accessible via localhost (the VM public ip address/port)
    
 ```bash
 http://20.90.12.64:80
