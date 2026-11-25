@@ -31,3 +31,38 @@ docker ps
 http://20.90.12.64:80
 ```
 ![](Image/nginx.png)
+
+
+# Task 2 — Connect Containers Using a Custom Bridge Network
+with custom bridge network and verify thacontainers can communicate using container names rather than IP addresses..
+1. create a custome bridge network named **mynetwork**
+```bash
+   docker network create mynetwork
+```
+2. Confirm the network was created using the command
+```bash
+   docker network ls
+```
+3. Create and run two containers web and client using the following command
+ ```bash
+   docker run -d \
+  --name web \
+  --network mynetwork \
+  nginx:alpine
+
+
+
+docker run -d \
+  --name client \
+  --network mynetwork \
+  busybox:1.36 \
+  sleep infinity
+
+```
+
+4. Check the containers created using
+   
+```bash
+docker ps
+```
+5.  verify you can reach web container from clinet container using
