@@ -6,6 +6,8 @@ The goal is to deploy an Nginx web server using Docker’s default bridge networ
 docker pull nginx:alpine
 ```
 
+
+
 2. Run the nginx on the default bridge network using the command
  ```bash
 docker run -d \
@@ -13,3 +15,19 @@ docker run -d \
   -p 80:80 \
   nginx:alpine
 ```
+![codebase](Image/dockerpull.png)
+
+3. check the running containers using
+
+```bash
+docker ps
+```
+   
+![](Image/alpineimage.png)
+
+4. The container should be accessible via the VM public ip address/port
+   
+```bash
+http://20.90.12.64:80
+```
+
