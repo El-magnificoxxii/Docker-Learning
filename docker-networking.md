@@ -15,7 +15,7 @@ docker run -d \
   -p 80:80 \
   nginx:alpine
 ```
-![codebase](Image/dockerpull.png)
+![](Image/dockerpull.png)
 
 3. check the running containers using
 
@@ -30,4 +30,4 @@ docker ps
 ```bash
 http://20.90.12.64:80
 ```
-
+![](Image/nginx.png)
