@@ -39,11 +39,14 @@ with custom bridge network and verify thacontainers can communicate using contai
 ```bash
    docker network create mynetwork
 ```
+![](Image/newnetwork.png)
 
 2. Confirm the network was created using the command
 ```bash
    docker network ls
 ```
+![](Image/networkls.png)
+
 3. Create and run two containers web and client using the following command
  ```bash
    docker run -d \
@@ -60,15 +63,20 @@ docker run -d \
   sleep infinity
 
 ```
+![](Image/docker2container.png)
 
 4. Check the containers created using
    
 ```bash
 docker ps
 ```
+![](Image/dockerps1.png)
+
 5.  verify you can reach web container from clinet container using
 
 ```bash
    docker exec client wget -qO- http://web
 ```
+![](Image/dockerexec.png)
+
 6. 
