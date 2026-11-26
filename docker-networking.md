@@ -1,4 +1,4 @@
-<img width="392" height="43" alt="2Dockernetworks" src="https://github.com/user-attachments/assets/f75f32b5-096a-4812-8b63-eb8abdd1ddc3" /># Task 1 — Deploy a Standalone Application Using the Default Bridge Network
+# Task 1 — Deploy a Standalone Application Using the Default Bridge Network
 The goal is to deploy an Nginx web server using Docker’s default bridge network and access it through the VM Public IP address.
 1. Pull the required image from docker registry using:
    
@@ -95,7 +95,7 @@ ypu can see that the client and web both belong to the same network and that is 
 
    docker network create backend-network
 ```
-![](Image/![2Dockernetworks.png)
+![](Image/2Dockernetworks.png)
 
  2. Verify the Two Networks created
 
@@ -103,7 +103,7 @@ ypu can see that the client and web both belong to the same network and that is 
    docker network ls
 ```
 
-![](Image/![networkverification.png)
+![](Image/networkverification.png)
 
 3. Run the two containers **database and backend container**
 ```bash
@@ -126,7 +126,7 @@ ypu can see that the client and web both belong to the same network and that is 
 NETWORK_NAME is frontend-network
 CONTAINER_NAME is backend
 
-![](Image/![networkconnection.png)
+![](Image/networkconnection.png)
 
 5. Run the **frontend container**
 ```bash
@@ -144,19 +144,19 @@ CONTAINER_NAME is backend
 ```bash
    docker network inspect frontend-network
 ```
-![](Image/![networkinspector.png)
+![](Image/networkinspector.png)
 
 8. inspect the backend network to see the containers connected to it using
 ```bash
    docker network inspect backend-network
 ```
-![](Image/![networkinspection.png)
+![](Image/networkinspection.png)
 
 9.  Verify Frontend-to-Backend Communication of the container using this command
 ```bash
    docker exec frontend wget -qO- http://backend
 ```
-![](Image/![nginxreturned.png)
+![](Image/nginxreturned.png)
 
 The Nginx Welcome Page HTML is returned.
 
@@ -171,17 +171,17 @@ Then test connectivity to MongoDB:
 ```bash
    docker exec backend nc -zv -w 5 db 27017
 ```
-![](Image/![backend.png)
+![](Image/backend.png)
 
 11. Verify if Frontend can reach Database, use this command
 ```bash
     docker exec frontend apk add --no-cache netcat-openbsd
 ```
-![](Image/![frontenddbcom.png)
+![](Image/frontenddbcom.png)
 
 12. Verifying Public Access to the Frontend Only
 
-![](Image/![nginx.png)
+![](Image/nginx.png)
 
 
 # Deploy an Application Using Docker Host Network
@@ -197,10 +197,10 @@ The Host network mode uses the VM’s ports directly.
 ```bash
  docker ps
 ```
-![](Image/![portverify.png)
+![](Image/portverify.png)
 
 3. inspect the network mode to see if it is running on host using
 ```bash
    docker inspect fastapp | grep '"NetworkMode"
 ```
-![](Image/![host.png)
+![](Image/host.png)
